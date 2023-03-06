@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .controller {
+        display: flex;
+        width: 300px;
+        flex-direction: column;
+        font-size: xx-large;
+        margin-left: 50px;
+        justify-content: space-between;
+    }
+
+    .container .btn-play,.btn-play-again, .btn-nextLevel {
+        margin-top: 20px;
+        width: 300px;
+        border-radius: 50px;
+        height: 50px;
+        border: solid 3px black;
+        font-weight: 600;
+        font-size: 30px;
+        background-color: greenyellow;
+
+    }
+
+    #level {
+        width: 50px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    #board {
+        border: solid 4px black;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <canvas id="board"></canvas>
+    <div class="controller">
+        <div>
+            <h1>TETRIS</h1>
+            <p>Score: <span id="score">0</span></p>
+            <label for="level">Level</label>
+            <select id="level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+
+            </select>
+            <br>
+            <p>Next level: <span id="nextLv"></span></p>
+            <div id="gameover" style="display: none">
+                <h2>GAME OVER</h2>
+                <p>Your score is:  <span>0</span></p>
+            </div>
+        </div>
+        <div>
+            <input type="button" class="btn-nextLevel" value="Next level" style="display: none">
+            <input type="button" class="btn-play" value="Play">
+            <input type="button" class="btn-play-again" value="Play Again" style="display: none">
+        </div>
+    </div>
+
+
+</div>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/Tetris.js"></script>
+
+</body>
+</html>
