@@ -84,7 +84,7 @@ function createBoard(lv) {
             while (index <= 20) {
                 const i = Math.floor((Math.random() * row));
                 const j = Math.floor((Math.random() * col));
-                // các khối vật cản chỉ xuất hiện ở 3 dòng từ dưới lên và không cho xuất hiện 20 khối trong cùng 1 hàng
+                // các khối vật cản chỉ xuất hiện ở 4 dòng từ dưới lên và không cho xuất hiện 20 khối trong cùng 1 hàng
 
                 if (i > 16 && board[i].reduce((a, b) => a + b, 0) < 10) {
                     console.log(j, i);
@@ -95,13 +95,13 @@ function createBoard(lv) {
             speed = 320;
             break;
         case 4:
-            // các khối vật cản chỉ xuất hiện ở 4 dòng từ dưới lên và không cho xuất hiện 20 khối trong cùng 1 hàng
+            // các khối vật cản chỉ xuất hiện ở 5 dòng từ dưới lên và không cho xuất hiện 20 khối trong cùng 1 hàng
             //tạo 40 khối vật cản
 
             while (index <= 40) {
                 const i = Math.floor((Math.random() * row));
                 const j = Math.floor((Math.random() * col));
-                if (i > 15 && board[i].reduce((a, b) => a + b, 0) < 10) {
+                if (i > 14 && board[i].reduce((a, b) => a + b, 0) < 10) {
                     console.log(j, i);
                     board[j][i] = 1;
                     index++;
@@ -354,6 +354,8 @@ function startGame() {
 // ẩn nút "Play" và hiển thị nút "Pause"
     $('.btn-play').hide();
     $('.btn-pause').show();
+    $('.btn-play-again').show();
+    $('.btn-newGame').show();
 }
 //hàm này đê cho người chơi chơi lại
 function resetGame() {
@@ -412,8 +414,11 @@ $('#board').click(function () {
 })
 //nhấn nút play để chơi
 $('.btn-play').click(function () {
-    console.log(level)
+    // console.log(level)
     startGame();
+})
+$('.btn-newGame').click(function () {
+    location.reload();
 })
 //chơi lại game
 $('.btn-play-again').click(function () {
